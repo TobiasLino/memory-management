@@ -1,0 +1,35 @@
+On Understanding Types, Data Abstraction, and Polymorphism
+===============================================================
+	- typed polymorphic programming laguages
+
+From Untyped to Typed Universes
+===============================================================
+
+Organizando universos untyped
+---------------------------------------------------------------
+untyped universes:
+	- bit strings in memory
+	- S-expressions in pure Lisp
+	- lambda expression no cálculo lambda
+	- Sets in set theory
+
+	- untyped >> only one type
+	- um pedaço de memória é determinado por uma interpretação externa do seu conteúdo
+	- no cálculo lambda tudo é uma função >> só tem o tipo função
+	
+	- identificar porque um objeto é usado é naturalmente um processo de tipá-lo
+
+Tipagem forte e estática
+---------------------------------------------------------------
+	- type version were proposed to eleiminate inconsistencies
+	- dado um tipo, um objeto consegue representar as propriedades de um tipo de dado.
+	- mais fácil pra realizar operações de determinado tipo de dado
+	
+	- associados a constantes, operações, variáveis e símbolos de função
+
+Type inference system
+	- inferir o tipo de uma expressão quando nenhuma, ou pouca, informação é dada explicitamente
+	- fortemente tipada é quando todas as expressões são type-consistent
+		- garante que o programa rode sem nenhum erro de tipo
+	- tipagem estática == verificação do tipo em tempo de compilação
+	
