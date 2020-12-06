@@ -1,0 +1,42 @@
+Gerenciamento de memória em C++
+===============================================================
+	
+	- fragmentação externa: solicitação de n bytes, porém o espaço contínuo do heap é menor
+		por mais que o total disponível seja maior que n.
+		- espaço perdido
+	- fragmentação interna: pedaços alocados são maiores que os solicitados
+		- memória inutilizada
+	
+Métodos de ajuste sequenncial
+===============================================================
+	- lista ligada
+	- todos os estão vinculados
+	- busca o >= que é solicitado
+	
+	- primeiro ajuste: aloca o primeiro bloco que atenda a solicitação
+		- mais eficiente
+	- melhor ajuste: aloca o bloco que é mais próxim da solicitação
+		- lento e cria porções minúsculas inutilizáveis
+	- pior ajuste: encontra ao maior da lista e a diferença é usada posteriormente
+		- tenta evitar a criação de porções inúteis
+	- próximo ajuste: o próximo bloco que é grande o suficiente
+		- velocidade comparável com o primeiro, pois varre a lista toda
+	
+
+Métodos de ajuste não-sequencial
+===============================================================
+	- divide a memória em várias listas, cada uma com vários blocos do mesmo tamanho
+	- grandes blocos são diminuidos em blocos menores
+	- organizadas como uma árvore
+	
+	- determinar tamnhos mais populares de blocos
+	- ajuste exato adaptativo: cria e ajusta listas de blocos perfeitamente conforme a solicitação
+		- mantida uma lista de determinado tamanho
+		- um bloco b e adicionado a uma lista se essa contém blocos de tamanho b e se b foi liberado
+		- quando b é solicitado, um bloco da lista é destacado
+		- no contrário, é disparado um dos métodos de ajuste sequencial
+	- depois de T alocações, se uma lista não corresponde a nenhum dos tamanhos de blocos frequentes,
+		ela é liberada por inteiro
+	- as listas que sobram são mantidas pequenas para permitir um ajuste sequencial rápido
+	- ajuste exato != ajuste sequencial
+	

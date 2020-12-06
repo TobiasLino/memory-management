@@ -1,0 +1,7 @@
+Abstract models of memry management
+===============================================================
+	- Identificar, por meio da tipagem, quais objetos são lixos em um coletor de lixo
+		para linguagem funcionais.
+	- desenvolvimento de uma linguagem baseada no cálculo lambda
+	
+	
